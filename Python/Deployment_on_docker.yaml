@@ -1,0 +1,5 @@
+import docker
+
+client = docker.from_env()
+container = client.containers.run("myapp:latest", detach=True, ports={"8080": 80})
+print(f"Container {container.short_id} started.")
